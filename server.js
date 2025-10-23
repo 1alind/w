@@ -1,20 +1,21 @@
+// server.js (الكود المعدل)
+
 // استيراد وحدة HTTP المدمجة
 const http = require('http');
 
-const hostname = '127.0.0.1'; // المضيف المحلي (localhost)
-const port = 3000; // المنفذ الذي سيستمع عليه الخادم
+// 💡 التعديل الرئيسي: استخدم المنفذ المعين بواسطة البيئة (Railway) أو استخدم 3000 محليًا.
+const port = process.env.PORT || 3000;
+const hostname = '0.0.0.0'; // التعديل: استخدم '0.0.0.0' للسماح بالوصول من أي مضيف (ضروري للنشر السحابي)
 
 // إنشاء الخادم
 const server = http.createServer((req, res) => {
-  // تعيين رأس الاستجابة
-  res.statusCode = 200; // رمز حالة HTTP 200 يعني "نجاح"
-  res.setHeader('Content-Type', 'text/plain'); // نوع محتوى نصي عادي
-
-  // إنهاء الاستجابة وإرسال النص
-  res.end('Hello World from Basic Node Server!\n');
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World from Basic Node Server deployed on Railway!\n');
 });
 
-// تشغيل الخادم للاستماع على المنفذ والمضيف المحدد
+// تشغيل الخادم
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  // لاحظ استخدام ${port} في الرسالة
+  console.log(`Server running on port ${port}`);
 });
