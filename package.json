@@ -1,17 +1,15 @@
 {
-  "name": "my-basic-railway-server",
+  "name": "railway-basic-app",
   "version": "1.0.0",
-  "description": "Basic Node.js server optimized for Railway deployment.",
-  "main": "server.js",
+  "description": "A basic Node.js app for Railway",
+  "main": "index.js",
   "scripts": {
-    "start": "npm server.js --omit=dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [
-    "node",
-    
-    "http"
-  ],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
