@@ -4,7 +4,7 @@
   "description": "A basic Node.js app for Railway",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node /app/index.js"
   },
   "dependencies": {
     "express"
