@@ -4,7 +4,7 @@
   "description": "Basic Node.js server optimized for Railway deployment.",
   "main": "server.js",
   "scripts": {
-    "start": "npm server.js",
+    "start": "npm server.js --omit=dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
