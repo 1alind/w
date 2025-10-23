@@ -1,21 +1,13 @@
-// server.js (الكود المعدل)
+const express = require('express');
+const app = express();
 
-// استيراد وحدة HTTP المدمجة
-const http = require('http');
+// Use the port Railway provides, or fallback to 3000
+const PORT = process.env.PORT || 3000;
 
-// 💡 التعديل الرئيسي: استخدم المنفذ المعين بواسطة البيئة (Railway) أو استخدم 3000 محليًا.
-const port = process.env.PORT || 3000;
-const hostname = '0.0.0.0'; // التعديل: استخدم '0.0.0.0' للسماح بالوصول من أي مضيف (ضروري للنشر السحابي)
-
-// إنشاء الخادم
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World from Basic Node Server deployed on Railway!\n');
+app.get('/', (req, res) => {
+  res.send('Hello from Railway!');
 });
 
-// تشغيل الخادم
-server.listen(port, hostname, () => {
-  // لاحظ استخدام ${port} في الرسالة
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
