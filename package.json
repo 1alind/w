@@ -4,7 +4,7 @@
   "description": "Basic Node.js server optimized for Railway deployment.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",  <-- Railway ستقوم بتشغيل هذا الأمر
+    "start": "npm server.js",  <-- Railway ستقوم بتشغيل هذا الأمر
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
